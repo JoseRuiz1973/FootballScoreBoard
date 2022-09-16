@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Result.cs" />
-    <Compile Include="Models\Match.cs" />
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="IScoreBoard.cs" />

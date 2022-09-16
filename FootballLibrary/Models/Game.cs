@@ -4,7 +4,7 @@ namespace FootballLibrary
 {
     public class Game
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public string HomeTeam { get; set; }
         public string AwayTeam { get; set; }
         public int HomeScore { get; set; }

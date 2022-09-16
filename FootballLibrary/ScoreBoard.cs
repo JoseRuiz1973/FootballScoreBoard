@@ -11,14 +11,14 @@ namespace FootballLibrary
     {
         List<Game> _games = new List<Game>();                
 
-        public Result StartGame(string jsonMatch)
+        public Result StartGame(string json)
         {
             Result result = new Result();
 
             try
             {
                 //Deserialize json match
-                Match match = JsonConvert.DeserializeObject<Match>(jsonMatch);
+                Game match = JsonConvert.DeserializeObject<Game>(json);
 
                 //Check input values
                 if (string.IsNullOrEmpty(match.HomeTeam))
@@ -70,23 +70,23 @@ namespace FootballLibrary
             return result;
         }
 
-        public Result UpdateGame(string jsonGame)
+        public Result UpdateGame(string json)
         {
             Result result = new Result();
 
             try
             {
                 //Deserialize json match
-                Game score = JsonConvert.DeserializeObject<Game>(jsonGame);
+                Game match = JsonConvert.DeserializeObject<Game>(json);
 
                 //Check input values
-                if (string.IsNullOrEmpty(score.HomeTeam))
+                if (string.IsNullOrEmpty(match.HomeTeam))
                 {
                     result.Description = "Home Team is empty";
                     result.Id = 100;
                     return result;
                 }
-                else if (string.IsNullOrEmpty(score.AwayTeam))
+                else if (string.IsNullOrEmpty(match.AwayTeam))
                 {
                     result.Description = "Away Team is empty";
                     result.Id = 101;
@@ -95,8 +95,8 @@ namespace FootballLibrary
 
                 //Find and modify the game
                 Game game = (from g in _games
-                             where g.HomeTeam == score.HomeTeam
-                             && g.AwayTeam == score.AwayTeam
+                             where g.HomeTeam == match.HomeTeam
+                             && g.AwayTeam == match.AwayTeam
                              select g).FirstOrDefault();
 
                 if (game == null)
@@ -107,8 +107,8 @@ namespace FootballLibrary
                 }
                 else
                 {
-                    game.HomeScore = score.HomeScore;
-                    game.AwayScore = score.AwayScore;
+                    game.HomeScore = match.HomeScore;
+                    game.AwayScore = match.AwayScore;
                 }                
             }
             catch (Exception ex)
@@ -121,14 +121,14 @@ namespace FootballLibrary
             return result;
         }
 
-        public Result FinishGame(string jsonMatch)
+        public Result FinishGame(string json)
         {
             Result result = new Result();
 
             try
             {
                 //Deserialize json match
-                Match match = JsonConvert.DeserializeObject<Match>(jsonMatch);
+                Game match = JsonConvert.DeserializeObject<Game>(json);
 
                 //Check input values
                 if (string.IsNullOrEmpty(match.HomeTeam))

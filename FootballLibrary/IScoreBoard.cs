@@ -4,11 +4,11 @@ namespace FootballLibrary
 {
     public interface IScoreBoard
     {
-        Result StartGame(string jsonMatch);
+        Result StartGame(string json);
 
-        Result UpdateGame(string jsonGame);
+        Result UpdateGame(string json);
 
-        Result FinishGame(string jsonMatch);
+        Result FinishGame(string json);
 
         List<Game> GetSummaryGamesByOrder();
 

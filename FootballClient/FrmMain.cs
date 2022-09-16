@@ -72,13 +72,13 @@ namespace FootballClient
 
         private void cmdStartMexicoCanada_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Mexico"",""AwayTeam"":""Canada""}";
-                result = _scoreBoard.StartGame(jsonMatch);
+                json = @"{""HomeTeam"":""Mexico"",""AwayTeam"":""Canada""}";
+                result = _scoreBoard.StartGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,13 +96,13 @@ namespace FootballClient
 
         private void cmdSpainBrazil_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Spain"",""AwayTeam"":""Brazil""}";
-                result = _scoreBoard.StartGame(jsonMatch);
+                json = @"{""HomeTeam"":""Spain"",""AwayTeam"":""Brazil""}";
+                result = _scoreBoard.StartGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,13 +120,13 @@ namespace FootballClient
 
         private void cmdGermanyFrance_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Germany"",""AwayTeam"":""France""}";
-                result = _scoreBoard.StartGame(jsonMatch);
+                json = @"{""HomeTeam"":""Germany"",""AwayTeam"":""France""}";
+                result = _scoreBoard.StartGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -144,13 +144,13 @@ namespace FootballClient
 
         private void cmdUruguayItaly_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Uruguay"",""AwayTeam"":""Italy""}";
-                result = _scoreBoard.StartGame(jsonMatch);
+                json = @"{""HomeTeam"":""Uruguay"",""AwayTeam"":""Italy""}";
+                result = _scoreBoard.StartGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -168,13 +168,13 @@ namespace FootballClient
 
         private void cmdArgentinaAustralia_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Argentina"",""AwayTeam"":""Australia""}";
-                result = _scoreBoard.StartGame(jsonMatch);
+                json = @"{""HomeTeam"":""Argentina"",""AwayTeam"":""Australia""}";
+                result = _scoreBoard.StartGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -192,13 +192,13 @@ namespace FootballClient
 
         private void cmdUpdateMexicoCanada_Click(object sender, EventArgs e)
         {
-            string jsonGame = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonGame = @"{""HomeTeam"":""Mexico"",""AwayTeam"":""Canada"",""HomeScore"":""0"",""AwayScore"":""5""}";
-                result = _scoreBoard.UpdateGame(jsonGame);
+                json = @"{""HomeTeam"":""Mexico"",""AwayTeam"":""Canada"",""HomeScore"":""0"",""AwayScore"":""5""}";
+                result = _scoreBoard.UpdateGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -216,13 +216,13 @@ namespace FootballClient
 
         private void cmdUpdateSpainBrazil_Click(object sender, EventArgs e)
         {
-            string jsonGame = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonGame = @"{""HomeTeam"":""Spain"",""AwayTeam"":""Brazil"",""HomeScore"":""10"",""AwayScore"":""2""}";
-                result = _scoreBoard.UpdateGame(jsonGame);
+                json = @"{""HomeTeam"":""Spain"",""AwayTeam"":""Brazil"",""HomeScore"":""10"",""AwayScore"":""2""}";
+                result = _scoreBoard.UpdateGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -240,13 +240,13 @@ namespace FootballClient
 
         private void cmdUpdateGermanyFrance_Click(object sender, EventArgs e)
         {
-            string jsonGame = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonGame = @"{""HomeTeam"":""Germany"",""AwayTeam"":""France"",""HomeScore"":""2"",""AwayScore"":""2""}";
-                result = _scoreBoard.UpdateGame(jsonGame);
+                json = @"{""HomeTeam"":""Germany"",""AwayTeam"":""France"",""HomeScore"":""2"",""AwayScore"":""2""}";
+                result = _scoreBoard.UpdateGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -264,13 +264,13 @@ namespace FootballClient
 
         private void cmdUpdateUruguayItaly_Click(object sender, EventArgs e)
         {
-            string jsonGame = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonGame = @"{""HomeTeam"":""Uruguay"",""AwayTeam"":""Italy"",""HomeScore"":""6"",""AwayScore"":""6""}";
-                result = _scoreBoard.UpdateGame(jsonGame);
+                json = @"{""HomeTeam"":""Uruguay"",""AwayTeam"":""Italy"",""HomeScore"":""6"",""AwayScore"":""6""}";
+                result = _scoreBoard.UpdateGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -288,13 +288,13 @@ namespace FootballClient
 
         private void cmdUpdateArgentinaAustralia_Click(object sender, EventArgs e)
         {
-            string jsonGame = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonGame = @"{""HomeTeam"":""Argentina"",""AwayTeam"":""Australia"",""HomeScore"":""3"",""AwayScore"":""1""}";
-                result = _scoreBoard.UpdateGame(jsonGame);
+                json = @"{""HomeTeam"":""Argentina"",""AwayTeam"":""Australia"",""HomeScore"":""3"",""AwayScore"":""1""}";
+                result = _scoreBoard.UpdateGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -312,13 +312,13 @@ namespace FootballClient
 
         private void cmdFinishMexicoCanada_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Mexico"",""AwayTeam"":""Canada""}";
-                result = _scoreBoard.FinishGame(jsonMatch);
+                json = @"{""HomeTeam"":""Mexico"",""AwayTeam"":""Canada""}";
+                result = _scoreBoard.FinishGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -336,13 +336,13 @@ namespace FootballClient
 
         private void cmdFinishSpainBrazil_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Spain"",""AwayTeam"":""Brazil""}";
-                result = _scoreBoard.FinishGame(jsonMatch);
+                json = @"{""HomeTeam"":""Spain"",""AwayTeam"":""Brazil""}";
+                result = _scoreBoard.FinishGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -360,13 +360,13 @@ namespace FootballClient
 
         private void cmdFinishGermanyFrance_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Germany"",""AwayTeam"":""France""}";
-                result = _scoreBoard.FinishGame(jsonMatch);
+                json = @"{""HomeTeam"":""Germany"",""AwayTeam"":""France""}";
+                result = _scoreBoard.FinishGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -384,13 +384,13 @@ namespace FootballClient
 
         private void cmdFinishUruguayItaly_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Uruguay"",""AwayTeam"":""Italy""}";
-                result = _scoreBoard.FinishGame(jsonMatch);
+                json = @"{""HomeTeam"":""Uruguay"",""AwayTeam"":""Italy""}";
+                result = _scoreBoard.FinishGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -408,13 +408,13 @@ namespace FootballClient
 
         private void cmdFinishArgentinaAustralia_Click(object sender, EventArgs e)
         {
-            string jsonMatch = string.Empty;
+            string json = string.Empty;
             Result result = new Result();
 
             try
             {
-                jsonMatch = @"{""HomeTeam"":""Argentina"",""AwayTeam"":""Australia""}";
-                result = _scoreBoard.FinishGame(jsonMatch);
+                json = @"{""HomeTeam"":""Argentina"",""AwayTeam"":""Australia""}";
+                result = _scoreBoard.FinishGame(json);
                 if (result.Id > 0)
                 {
                     MessageBox.Show("Error: " + result.Description, "Football", MessageBoxButtons.OK, MessageBoxIcon.Error);
