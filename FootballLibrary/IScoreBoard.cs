@@ -10,7 +10,7 @@ namespace FootballLibrary
 
         Result FinishGame(string json);
 
-        List<Game> GetSummaryGamesByOrder();
+        List<Game> GetCurrentGames();
 
         List<Game> GetSummaryGamesByTotalScore();
     }

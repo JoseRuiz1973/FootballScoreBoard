@@ -58,6 +58,12 @@ namespace FootballLibrary
                     result.Id = 101;
                     return result;
                 }
+                else if (match.HomeTeam.Trim() == match.AwayTeam.Trim())
+                {
+                    result.Description = "Away Team is the same that Home Team";
+                    result.Id = 101;
+                    return result;
+                }
 
                 //Check game not exists
                 Game game = (from g in _games
@@ -196,13 +202,13 @@ namespace FootballLibrary
             return result;
         }
 
-        public List<Game> GetSummaryGamesByOrder()
+        public List<Game> GetCurrentGames()
         {
             List<Game> list = new List<Game>();
 
             try
             {
-                //Get Summary Games
+                //Get Current Games
                 list = (from g in _games orderby g.Id ascending select g).ToList();
             }
             catch {

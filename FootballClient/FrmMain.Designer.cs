@@ -46,7 +46,14 @@
             this.cmdFinishSpainBrazil = new System.Windows.Forms.Button();
             this.cmdFinishMexicoCanada = new System.Windows.Forms.Button();
             this.cmdGetSummaryGamesByTotalScore = new System.Windows.Forms.Button();
-            this.cmdGetSummaryGamesByOrder = new System.Windows.Forms.Button();
+            this.cmdGetCurrentGames = new System.Windows.Forms.Button();
+            this.txtHomeTeam = new System.Windows.Forms.TextBox();
+            this.txtHomeScore = new System.Windows.Forms.TextBox();
+            this.txtAwayTeam = new System.Windows.Forms.TextBox();
+            this.txtAwayScore = new System.Windows.Forms.TextBox();
+            this.cmdStartGame = new System.Windows.Forms.Button();
+            this.cmdUpdateScore = new System.Windows.Forms.Button();
+            this.cmdFinishGame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblScoreBoard
@@ -226,22 +233,89 @@
             this.cmdGetSummaryGamesByTotalScore.UseVisualStyleBackColor = true;
             this.cmdGetSummaryGamesByTotalScore.Click += new System.EventHandler(this.cmdGetSummaryGamesByTotalScore_Click);
             // 
-            // cmdGetSummaryGamesByOrder
+            // cmdGetCurrentGames
             // 
-            this.cmdGetSummaryGamesByOrder.Location = new System.Drawing.Point(575, 321);
-            this.cmdGetSummaryGamesByOrder.Name = "cmdGetSummaryGamesByOrder";
-            this.cmdGetSummaryGamesByOrder.Size = new System.Drawing.Size(187, 23);
-            this.cmdGetSummaryGamesByOrder.TabIndex = 19;
-            this.cmdGetSummaryGamesByOrder.Text = "Get Summary Games By Order";
-            this.cmdGetSummaryGamesByOrder.UseVisualStyleBackColor = true;
-            this.cmdGetSummaryGamesByOrder.Click += new System.EventHandler(this.cmdGetSummaryGamesByOrder_Click);
+            this.cmdGetCurrentGames.Location = new System.Drawing.Point(575, 368);
+            this.cmdGetCurrentGames.Name = "cmdGetCurrentGames";
+            this.cmdGetCurrentGames.Size = new System.Drawing.Size(187, 23);
+            this.cmdGetCurrentGames.TabIndex = 19;
+            this.cmdGetCurrentGames.Text = "Get Current Games in the System";
+            this.cmdGetCurrentGames.UseVisualStyleBackColor = true;
+            this.cmdGetCurrentGames.Click += new System.EventHandler(this.cmdGetCurrentGames_Click);
+            // 
+            // txtHomeTeam
+            // 
+            this.txtHomeTeam.Location = new System.Drawing.Point(16, 371);
+            this.txtHomeTeam.Name = "txtHomeTeam";
+            this.txtHomeTeam.Size = new System.Drawing.Size(100, 20);
+            this.txtHomeTeam.TabIndex = 20;
+            // 
+            // txtHomeScore
+            // 
+            this.txtHomeScore.Location = new System.Drawing.Point(122, 371);
+            this.txtHomeScore.Name = "txtHomeScore";
+            this.txtHomeScore.Size = new System.Drawing.Size(57, 20);
+            this.txtHomeScore.TabIndex = 21;
+            this.txtHomeScore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHomeScore_KeyPress);
+            // 
+            // txtAwayTeam
+            // 
+            this.txtAwayTeam.Location = new System.Drawing.Point(204, 371);
+            this.txtAwayTeam.Name = "txtAwayTeam";
+            this.txtAwayTeam.Size = new System.Drawing.Size(100, 20);
+            this.txtAwayTeam.TabIndex = 22;
+            // 
+            // txtAwayScore
+            // 
+            this.txtAwayScore.Location = new System.Drawing.Point(310, 371);
+            this.txtAwayScore.Name = "txtAwayScore";
+            this.txtAwayScore.Size = new System.Drawing.Size(57, 20);
+            this.txtAwayScore.TabIndex = 23;
+            this.txtAwayScore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAwayScore_KeyPress);
+            // 
+            // cmdStartGame
+            // 
+            this.cmdStartGame.Location = new System.Drawing.Point(388, 369);
+            this.cmdStartGame.Name = "cmdStartGame";
+            this.cmdStartGame.Size = new System.Drawing.Size(163, 23);
+            this.cmdStartGame.TabIndex = 24;
+            this.cmdStartGame.Text = "Start Game";
+            this.cmdStartGame.UseVisualStyleBackColor = true;
+            this.cmdStartGame.Click += new System.EventHandler(this.cmdStartGame_Click);
+            // 
+            // cmdUpdateScore
+            // 
+            this.cmdUpdateScore.Location = new System.Drawing.Point(388, 398);
+            this.cmdUpdateScore.Name = "cmdUpdateScore";
+            this.cmdUpdateScore.Size = new System.Drawing.Size(163, 23);
+            this.cmdUpdateScore.TabIndex = 25;
+            this.cmdUpdateScore.Text = "Update Score";
+            this.cmdUpdateScore.UseVisualStyleBackColor = true;
+            this.cmdUpdateScore.Click += new System.EventHandler(this.cmdUpdateScore_Click);
+            // 
+            // cmdFinishGame
+            // 
+            this.cmdFinishGame.Location = new System.Drawing.Point(388, 427);
+            this.cmdFinishGame.Name = "cmdFinishGame";
+            this.cmdFinishGame.Size = new System.Drawing.Size(163, 23);
+            this.cmdFinishGame.TabIndex = 26;
+            this.cmdFinishGame.Text = "Finish Game";
+            this.cmdFinishGame.UseVisualStyleBackColor = true;
+            this.cmdFinishGame.Click += new System.EventHandler(this.cmdFinishGame_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 353);
-            this.Controls.Add(this.cmdGetSummaryGamesByOrder);
+            this.ClientSize = new System.Drawing.Size(774, 458);
+            this.Controls.Add(this.cmdFinishGame);
+            this.Controls.Add(this.cmdUpdateScore);
+            this.Controls.Add(this.cmdStartGame);
+            this.Controls.Add(this.txtAwayScore);
+            this.Controls.Add(this.txtAwayTeam);
+            this.Controls.Add(this.txtHomeScore);
+            this.Controls.Add(this.txtHomeTeam);
+            this.Controls.Add(this.cmdGetCurrentGames);
             this.Controls.Add(this.cmdGetSummaryGamesByTotalScore);
             this.Controls.Add(this.cmdFinishArgentinaAustralia);
             this.Controls.Add(this.cmdFinishUruguayItaly);
@@ -288,7 +362,14 @@
         private System.Windows.Forms.Button cmdFinishSpainBrazil;
         private System.Windows.Forms.Button cmdFinishMexicoCanada;
         private System.Windows.Forms.Button cmdGetSummaryGamesByTotalScore;
-        private System.Windows.Forms.Button cmdGetSummaryGamesByOrder;
+        private System.Windows.Forms.Button cmdGetCurrentGames;
+        private System.Windows.Forms.TextBox txtHomeTeam;
+        private System.Windows.Forms.TextBox txtHomeScore;
+        private System.Windows.Forms.TextBox txtAwayTeam;
+        private System.Windows.Forms.TextBox txtAwayScore;
+        private System.Windows.Forms.Button cmdStartGame;
+        private System.Windows.Forms.Button cmdUpdateScore;
+        private System.Windows.Forms.Button cmdFinishGame;
     }
 }
 
