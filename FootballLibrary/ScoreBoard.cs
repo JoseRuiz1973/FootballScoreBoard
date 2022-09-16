@@ -180,8 +180,7 @@ namespace FootballLibrary
                 //Get Summary Games
                 list = (from g in _games orderby g.Id ascending select g).ToList();
             }
-            catch (Exception ex)
-            {
+            catch {
             }
 
             //Return list
@@ -197,7 +196,7 @@ namespace FootballLibrary
                 //Get Summary Games By Total Score
                 list = (from g in _games orderby g.HomeScore + g.AwayScore descending, g.Id descending select g).ToList();
             }
-            catch () {
+            catch {
             }
 
             //Return list
