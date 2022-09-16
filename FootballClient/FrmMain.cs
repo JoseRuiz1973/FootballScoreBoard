@@ -13,7 +13,7 @@ namespace FootballClient
 {
     public partial class FrmMain : Form
     {
-        ScoreBoard _scoreBoard = new ScoreBoard();
+        IScoreBoard _scoreBoard = new ScoreBoard();
 
         public FrmMain()
         {

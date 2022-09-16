@@ -9,7 +9,32 @@ namespace FootballLibrary
 {
     public class ScoreBoard : IScoreBoard
     {
-        List<Game> _games = new List<Game>();                
+        List<Game> _games = new List<Game>();
+
+        #region Private Functions
+
+        private int GetLastIdGame()
+        {
+            int id = 0;
+
+            try
+            {
+                //Get Last Id Game
+                if (_games.Count > 0) {
+                    id = _games.Max(x => x.Id);
+                }                
+            }
+            catch {
+                id = 0;
+            }
+
+            //Return id
+            return id;
+        }
+
+        #endregion
+
+        #region Public Functions
 
         public Result StartGame(string json)
         {
@@ -50,7 +75,7 @@ namespace FootballLibrary
                 {
                     //Create the game
                     Game newGame = new Game();
-                    newGame.Id = _games.Count + 1;
+                    newGame.Id = GetLastIdGame() + 1;
                     newGame.HomeTeam = match.HomeTeam;
                     newGame.AwayTeam = match.AwayTeam;
                     newGame.HomeScore = 0;
@@ -202,5 +227,7 @@ namespace FootballLibrary
             //Return list
             return list;
         }
+
+        #endregion
     }
 }
